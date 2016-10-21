@@ -17,6 +17,7 @@ SuperHuman::SuperHuman() {
 		gender = 'x';
 		numArms = 2;
 		numLegs = 2;
+		rank = 4;
 
 
 }
@@ -32,8 +33,14 @@ bool SuperHuman::fly(void){
 	return  returnValue;
 }
 
-string SuperHuman::whoami(){
+string SuperHuman::whoami(void){
 	return "SuperHuman";
 }
+
+int SuperHuman::getRank(void){
+	return rank;
+}
+
+
 
 

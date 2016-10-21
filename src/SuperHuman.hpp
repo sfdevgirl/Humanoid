@@ -17,6 +17,7 @@ public:
 	virtual int getRank(void);
 	bool fly(void);
 	virtual string whoami(void);
+	int rank;
 
 };
 

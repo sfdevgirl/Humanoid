@@ -7,12 +7,13 @@
 
 #ifndef SITUATION_HPP_
 #define SITUATION_HPP_
+#include "Humanoid.hpp"
 
 class Situation {
 public:
 	Situation();
 	virtual ~Situation();
-	void fight(Humanoid &, Humanoid &);
+	void fight(Humanoid *, Humanoid * );
 };
 
 #endif /* SITUATION_HPP_ */

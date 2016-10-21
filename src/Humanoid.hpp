@@ -18,8 +18,7 @@ public:
 	Humanoid();
 	virtual ~Humanoid();
 	virtual string whoami(void) = 0; //pure virtual function
-	void fight(Humanoid *, Humanoid *);
-	virtual int getRank(void) = 0;
+	virtual int getRank(void) = 0; //pure
 protected:
 	int height; //inches
 		int weight; //lbs

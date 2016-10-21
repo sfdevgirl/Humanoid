@@ -24,6 +24,7 @@
 #include "EvilHuman.hpp"
 #include "EvilSuper.hpp"
 #include "GoodSuper.hpp"
+#include "Situation.hpp"
 using namespace std;
 
 int main() {
@@ -53,7 +54,11 @@ int main() {
 		GoodHuman *newGoodHuman = new GoodHuman();
 		EvilSuper *newEvilSuper = new EvilSuper();
 		GoodSuper *newGoodSuper = new GoodSuper();
-		fight(newEvilHuman, newSuperHuman);
+		Situation *newSituation = new Situation();
+		
+		newSituation->fight(newEvilHuman, newGoodSuper);
+		
+		
 
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
