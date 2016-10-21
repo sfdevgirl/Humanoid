@@ -14,6 +14,7 @@ public:
 	Situation();
 	virtual ~Situation();
 	void fight(Humanoid *, Humanoid * );
+	void setUpFight(Humanoid *, Humanoid *);
 };
 
 #endif /* SITUATION_HPP_ */

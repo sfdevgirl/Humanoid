@@ -14,10 +14,10 @@ class SuperHuman: public Humanoid {
 public:
 	SuperHuman();
 	virtual ~SuperHuman();
-	virtual int getRank(void);
+	virtual int getRank(void) = 0; //pure
 	bool fly(void);
-	virtual string whoami(void);
-	int rank;
+	virtual string whoami(void) = 0; //pure
+
 
 };
 
