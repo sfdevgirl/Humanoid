@@ -4,7 +4,7 @@ all: main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodHuman.o 
 main.o: main.cpp SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Evil.o Good.o Situation.o
 	g++ -c main.cpp 
 Humanoid.o: Humanoid.cpp                                                        
-	 14     g++ -c Humanoid.cpp
+	g++ -c Humanoid.cpp
 SuperHuman.o: SuperHuman.cpp  Humanoid.o
 	g++ -c SuperHuman.cpp
 
@@ -12,7 +12,7 @@ Human.o: Human.cpp Humanoid.o
 	g++ -c Human.cpp
 
 Good.o: Good.cpp
-	      g++ -c Good.cpp
+	g++ -c Good.cpp
 
 Evil.o: Evil.cpp
 	                                                                                   
