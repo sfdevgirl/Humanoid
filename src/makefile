@@ -1,7 +1,7 @@
-all: main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodHuman.o GoodSuper.o Good.o Evil.o
-	g++ -o Humanoid main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Good.o Evil.o 
+all: main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodHuman.o GoodSuper.o Good.o Evil.o Situation.o
+	g++ -o Humanoid main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Good.o Evil.o Situation.o 
 
-main.o: main.cpp SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Evil.o Good.o
+main.o: main.cpp SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Evil.o Good.o Situation.o
 	g++ -c main.cpp 
 Humanoid.o: Humanoid.cpp                                                        
 	 14     g++ -c Humanoid.cpp
@@ -29,6 +29,9 @@ EvilSuper.o: EvilSuper.cpp Evil.o SuperHuman.o
 
 GoodSuper.o: GoodSuper.cpp Good.o SuperHuman.o
 	g++ -c GoodSuper.cpp
+
+Situation.o: Situation.cpp
+	g++ -c Situation.cpp
 
 
 Clean:
