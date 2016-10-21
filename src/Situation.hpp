@@ -7,6 +7,7 @@
 
 #ifndef SITUATION_HPP_
 #define SITUATION_HPP_
+#include "Humanoid.hpp"
 
 class Situation {
 public:

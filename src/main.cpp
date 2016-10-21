@@ -24,6 +24,7 @@
 #include "EvilHuman.hpp"
 #include "EvilSuper.hpp"
 #include "GoodSuper.hpp"
+#include "Situation.hpp"
 using namespace std;
 
 int main() {
@@ -49,11 +50,12 @@ int main() {
 //			delete myHumanoids[i];
 //		}
 	//3. evil super human 2. good super 1. evil human 0. good human
-		EvilHuman *newEvilHuman = new EvilHuman();
-		GoodHuman *newGoodHuman = new GoodHuman();
-		EvilSuper *newEvilSuper = new EvilSuper();
-		GoodSuper *newGoodSuper = new GoodSuper();
-		fight(newEvilHuman, newSuperHuman);
+		EvilHuman newEvilHuman;
+		GoodHuman newGoodHuman;
+		EvilSuper newEvilSuper;
+		GoodSuper newGoodSuper;
+		Situation situation;
+		situation.fight(newEvilHuman, newGoodHuman);
 
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;

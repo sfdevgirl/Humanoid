@@ -32,4 +32,3 @@ void Situation::fight(Humanoid &a, Humanoid &b){
 		}
 
 	}
-}

@@ -1,38 +1,40 @@
-all: main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodHuman.o GoodSuper.o Good.o Evil.o Situation.o
+all: main.o Humanoid.o Human.o SuperHuman.o Good.o Evil.o EvilHuman.o\
+	GoodHuman.o EvilSuper.o GoodSuper.o Situation.o
 	g++ -o Humanoid main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Good.o Evil.o Situation.o 
 
-main.o: main.cpp SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Evil.o Good.o Situation.o
+main.o: main.cpp Humanoid.hpp Human.hpp SuperHuman.hpp GoodHuman.hpp \
+		EvilHuman.hpp EvilSuper.hpp GoodSuper.hpp Situation.hpp
 	g++ -c main.cpp 
-Humanoid.o: Humanoid.cpp                                                        
-	 14     g++ -c Humanoid.cpp
-SuperHuman.o: SuperHuman.cpp  Humanoid.o
-	g++ -c SuperHuman.cpp
 
-Human.o: Human.cpp Humanoid.o
+Humanoid.o: Humanoid.hpp                                                
+	g++ -c Humanoid.cpp
+
+Human.o: Human.hpp
 	g++ -c Human.cpp
 
-Good.o: Good.cpp
-	      g++ -c Good.cpp
+SuperHuman.o: SuperHuman.hpp  
+	g++ -c SuperHuman.cpp
 
-Evil.o: Evil.cpp
-	                                                                                   
-	g++ -c Evil.cpp																					                                                                     
+Good.o: Good.hpp
+	g++ -c Good.cpp
 
-EvilHuman.o: EvilHuman.cpp  Human.o Evil.o
+Evil.o: Evil.hpp                                                                                   
+	g++ -c Evil.cpp
+
+EvilHuman.o: EvilHuman.hpp
 	g++ -c EvilHuman.cpp
 
-GoodHuman.o: GoodHuman.cpp Human.o Good.o
+GoodHuman.o: GoodHuman.hpp
 	g++ -c GoodHuman.cpp
 
-EvilSuper.o: EvilSuper.cpp Evil.o SuperHuman.o
+EvilSuper.o: EvilSuper.hpp
 	g++ -c EvilSuper.cpp
 
-GoodSuper.o: GoodSuper.cpp Good.o SuperHuman.o
+GoodSuper.o: GoodSuper.hpp
 	g++ -c GoodSuper.cpp
 
-Situation.o: Situation.cpp
+Situation.o: Situation.hpp Humanoid.hpp
 	g++ -c Situation.cpp
-
 
 Clean:
 	rm *.o Humanoid
