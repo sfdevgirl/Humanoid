@@ -1,38 +1,34 @@
-all: main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodHuman.o GoodSuper.o Good.o Evil.o Situation.o
-	g++ -o Humanoid main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Good.o Evil.o Situation.o 
++CXX = g++
++CXXFLAGS = -Wall -g
 
-main.o: main.cpp SuperHuman.o Human.o Humanoid.o EvilHuman.o EvilSuper.o GoodSuper.o GoodHuman.o Evil.o Good.o Situation.o
-	g++ -c main.cpp 
-Humanoid.o: Humanoid.cpp                                                        
-	      g++ -c Humanoid.cpp
-SuperHuman.o: SuperHuman.cpp  Humanoid.o
-	g++ -c SuperHuman.cpp
+all: main.o Humanoid.o Human.o SuperHuman.o Good.o Evil.o EvilHuman.o\
+	GoodHuman.o EvilSuper.o GoodSuper.o Situation.o
+	$(CXX) $(CXXFLAGS) -o Humanoid main.o SuperHuman.o Human.o Humanoid.o EvilHuman.o\
+		EvilSuper.o GoodSuper.o GoodHuman.o Good.o Evil.o Situation.o 
 
-Human.o: Human.cpp Humanoid.o
-	g++ -c Human.cpp
+main.o: main.cpp Humanoid.hpp Human.hpp SuperHuman.hpp GoodHuman.hpp \
+		EvilHuman.hpp EvilSuper.hpp GoodSuper.hpp Situation.hpp
+	$(CXX) $(CXXFLAGS) -c main.cpp 
 
-Good.o: Good.cpp
-	      g++ -c Good.cpp
+SuperHuman.o: SuperHuman.hpp Humanoid.hpp 
 
-Evil.o: Evil.cpp
-	                                                                                   
-	g++ -c Evil.cpp																					                                                                     
+Humanoid.o: Humanoid.hpp   
 
-EvilHuman.o: EvilHuman.cpp  Human.o Evil.o
-	g++ -c EvilHuman.cpp
+Human.o: Human.hpp Humanoid.hpp
 
-GoodHuman.o: GoodHuman.cpp Human.o Good.o
-	g++ -c GoodHuman.cpp
+Good.o: Good.hpp
 
-EvilSuper.o: EvilSuper.cpp Evil.o SuperHuman.o
-	g++ -c EvilSuper.cpp
+Evil.o: Evil.hpp  
 
-GoodSuper.o: GoodSuper.cpp Good.o SuperHuman.o
-	g++ -c GoodSuper.cpp
+EvilHuman.o: EvilHuman.hpp Evil.hpp Human.hpp
+ 
+GoodHuman.o: GoodHuman.hpp Good.hpp Human.hpp
 
-Situation.o: Situation.cpp 
-	g++ -c Situation.cpp
+EvilSuper.o: EvilSuper.hpp Evil.hpp SuperHuman.hpp
 
+GoodSuper.o: GoodSuper.hpp Good.hpp SuperHuman.hpp
 
-Clean:
-	rm *.o Humanoid
+Situation.o: Situation.hpp Humanoid.hpp
+
+clean:
+ 	rm *.o Humanoid
